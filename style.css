@@ -1,0 +1,964 @@
+/* Full-screen of desktop mode */
+@media(min-width:1024px){
+    body{
+        background-color:#074A6E;
+        color:#00070E;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+    }
+    header{
+        background-image: url("assets/images/Banner.JPG");
+        background-size: 100% 100%; /* both hit and wt is 100% */
+        background-position: center;
+        min-height: 180px;
+        font-size: 120%;
+        margin-top: 50px;
+        text-align: left;
+        border-bottom: 4px solid #145E6E;
+    }
+    header a:link{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:visited{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:hover{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    h1{
+        line-height: 200%;
+        padding-top: 50px;
+        padding-left: 2em;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    /*
+        display: flex; -> that is applied to the parent element
+            Turn the container into a "Flexbox" which automatically aligns
+            its direct children (or subitems) horizontally in a row
+    */
+    nav{
+        position: fixed;     /* Hardcode the x,y location */
+        top: 0;
+        left: 0;     /* left side should be at 0 on the page */
+        text-align: right;
+        width: 100%;
+        padding: 0.5em;
+        padding-right: 0;
+        background-color: whitesmoke;
+        margin: 0;
+        z-index: 9999;
+        text-decoration: none;
+    }
+    nav ul{
+            display: flex;
+            flex-wrap: nowrap;       /*nowrap means should be in one line*/
+            justify-content: flex-end;
+            margin: 0;
+            font-size: 1.2em;
+            list-style-type: none;
+        }
+    nav li{
+            width: 7em;
+            padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+            display:inline;
+    }
+    nav a{
+        text-decoration: none;
+        transition: all 0.3s;     /* CSS Animations */
+        display: block;
+        text-align: center;
+    }
+    /* This is similar to MIT's button.click */
+    nav a:hover{
+        color:#28BBDC;
+        padding-left: 10px;     /* subtle move */
+    }
+    nav a:link{
+        color: #3F2860;
+    }
+    nav a:visited{
+        color: #497777;
+    }
+    h2{
+        font-size: 1.8em;
+        color:#145E6E;
+        border-bottom: 2px solid #B5CDD8;
+        padding-bottom: 10px;
+        margin-top: 1.5em;
+    }
+    main{
+        width: 80%;
+        padding: 2em;
+        background-color: #EFF8FB;
+    }
+    footer{
+        background-color:#074A6E;
+        color:#EFF8FB;
+        text-align: center;
+        font-size: .8em;
+        font-style: italic;
+        padding: 2em 0;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        clear: both;     /* stops any flexing */
+    }
+    footer a:hover{
+        color: #EFF8FB;
+    }
+    section{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    blockquote{
+        margin: 0;
+        padding: 10px;
+        background-color: #EFF8FB;
+        border-left: 4px solid #28BBDC;
+        font-style: italic;
+        min-height: 80px;
+
+    }
+        /* Courses & Workshops Section Styles */
+    .courses, 
+    .workshops {
+        padding: 80px 0;
+    }
+    .courses h2,
+    .workshops h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .course-grid,
+    .workshop-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    .course,
+    .workshop {
+        width: 100%;            /*was 45%*/
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+    .course img {
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .course ul,
+    .workshop ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    .course button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;  /*???*/
+    }
+    .onethird{
+        float: left;
+        width: 33.33%;
+        padding: 0 15px;
+        box-sizing: border-box;     /* tells the tags to make their size based on the border */
+    }
+    .onehalf{
+        float: left;
+        width: 50%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    /* 
+        The .clear class is used to "reset" the layout after you have used floats 
+            (like your .onethird or .onehalf columns).
+        The Issue: When you use float: left;, those elements are essentially "lifted" 
+            out of the normal document flow. If you don't "clear" them, the elements 
+            that follow (like your footer) will try to wrap around the floats or 
+            overlap with them, which usually breaks the layout.
+        Adding <div class="clear"></div> tells the browser: "Stop floating here. Make 
+            sure the next element starts on a brand-new line below everything that was 
+            floated above it.
+    */
+    .clear{
+        clear: both;
+    }
+    /* About Page Sections */
+    .intro-box{
+        background-color: #EFF8FB;
+        border-left: 5px solid #074A6E;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-style: italic
+    }
+    .card{
+        background-color: #EFF8FB;
+        border: 1px solid #B5CDD8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 25px;     /* Added spacing between card */
+    }
+    .why-section{
+        background-color: #04293E;
+        color: #EFF8FB;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+    }
+    .why-section h2{     /*h2 tags in this class */
+        color: #28BBDC;
+        border-bottom-color: #417692;
+        margin-top: 0;    /* Reset margin in dark box */
+    }
+    .why-section ul{
+        padding-left: 20px;
+        columns: 2;     /* All li tags are 2 col in the ul */
+    }
+    /* class section */
+    .camp{  /*Utilized to emphasize company name */
+        color:#145E6E;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .faq-section{
+        margin-bottom: 40px;
+    }
+    .faq-item{
+        border-bottom: 1px solid #B5CDD8;
+        padding: 15px 0;
+    }
+    .question{
+        font-weight: bold;
+        color: #074A6E;
+        margin-bottom: 5px;
+    }
+    .answer{
+        margin-left: 20px;
+        color: #417692;
+    }
+    .container{
+        display: flex;
+        min-height: 600px;
+    }
+        /* Courses & Workshops Section Styles */
+    .courses, 
+    .workshops {
+        padding: 80px 0;
+    }
+    .courses h2,
+    .workshops h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .course-grid,
+    .workshop-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    .course,
+    .workshop {
+        width: 100%;            /*was 45%*/
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+    .course img {
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .course ul,
+    .workshop ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    .course button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;  /*???*/
+    }
+    /* id section */
+    #wrapper{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 30px;
+        /* shadow the tag and rgba(%,%,%,%) */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        background-color:#EFF8FB;
+    }
+    #webInstHero{
+        background-image: url(assets/images/WebDevInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #dataInstHero{
+        background-image: url(assets/images/DataSciInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #pyInstHero{
+        background-image: url(assets/images/PythonInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #mobile{
+        display: none;     /* visibility off */
+    }
+    #desktop{
+        display: inline;     /* visibility on */
+    }
+}
+
+/* Tablet Mode or half screen */
+@media(max-width:1024px){
+    body{
+        background-color:#074A6E;
+        color:#00070E;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+    }
+    header{
+        background-image: url("assets/images/Banner.JPG");
+        background-size: 100% 100%; /* both hit and wt is 100% */
+        background-position: center;
+        min-height: 150px;
+        font-size: 120%;
+        margin-top: 50px;
+        text-align: left;
+        border-bottom: 4px solid #145E6E;
+    }
+    header a:link{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:visited{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:hover{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    h1{
+        line-height: 150%;
+        padding-top: 50px;
+        padding-left: 2em;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    /*
+        display: flex; -> that is applied to the parent element
+            Turn the container into a "Flexbox" which automatically aligns
+            its direct children (or subitems) horizontally in a row
+    */
+    nav{
+        position: fixed;     /* Hardcode the x,y location */
+        top: 0;
+        left: 0;     /* left side should be at 0 on the page */
+        text-align: right;
+        width: 100%;
+        padding: 0.5em;
+        padding-right: 0;
+        background-color: whitesmoke;
+        margin: 0;
+        z-index: 9999;
+        text-decoration: none;
+    }
+    nav ul{
+            display: flex;
+            flex-wrap: nowrap;       /*nowrap means should be in one line*/
+            justify-content: flex-end;
+            margin: 0;
+            font-size: 1em;
+            list-style-type: none;
+    }
+    nav li{
+            width: 7em;
+            padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+            display:inline;
+    }
+    nav a{
+        text-decoration: none;
+        transition: all 0.3s;     /* CSS Animations */
+        display: block;
+        text-align: center;
+    }
+    /* This is similar to MIT's button.click */
+    nav a:hover{
+        color:#28BBDC;
+        padding-left: 10px;     /* subtle move */
+    }
+    nav a:link{
+        color: #3F2860;
+    }
+    nav a:visited{
+        color: #497777;
+    }
+    h2{
+        font-size: 150%;
+        color:#145E6E;
+        border-bottom: 2px solid #B5CDD8;
+        padding-bottom: 10px;
+    }
+    footer{
+        background-color:#074A6E;
+        color:#EFF8FB;
+        text-align: center;
+        font-size: .6em;
+        font-style: italic;
+        padding: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        clear: both;     /* stops any flexing */
+    }
+    footer a:hover{
+        color: #EFF8FB;
+    }
+    section{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    blockquote{
+        margin: 0;
+        padding: 10px;
+        background-color: #EFF8FB;
+        border-left: 4px solid #28BBDC;
+        font-style: italic;
+        min-height: 80px;
+
+    }
+    /* Courses & Workshops Section Styles */
+    .courses, 
+    .workshops {
+        padding: 80px 0;
+    }
+    .courses h2,
+    .workshops h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .course-grid,
+    .workshop-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    .course,
+    .workshop {
+        width: 100%;            /*was 45%*/
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+    .course img {
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .course ul,
+    .workshop ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    .course button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;  /*???*/
+    }
+    .onethird{
+        float: left;
+        width: 100%;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .onehalf{
+        float: left;
+        width: 50%;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    /* 
+        The .clear class is used to "reset" the layout after you have used floats 
+            (like your .onethird or .onehalf columns).
+        The Issue: When you use float: left;, those elements are essentially "lifted" 
+            out of the normal document flow. If you don't "clear" them, the elements 
+            that follow (like your footer) will try to wrap around the floats or 
+            overlap with them, which usually breaks the layout.
+        Adding <div class="clear"></div> tells the browser: "Stop floating here. Make 
+            sure the next element starts on a brand-new line below everything that was 
+            floated above it.
+    */
+    .clear{
+        clear: both;
+    }
+    /* About Page Sections */
+    .intro-box{
+        background-color: #EFF8FB;
+        border-left: 5px solid #074A6E;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-style: italic
+    }
+    .card{
+        background-color: #EFF8FB;
+        border: 1px solid #B5CDD8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 25px;     /* Added spacing between card */
+    }
+    .why-section{
+        background-color: #04293E;
+        color: #EFF8FB;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+    }
+    .why-section h2{     /*h2 tags in this class */
+        color: #28BBDC;
+        border-bottom-color: #417692;
+        margin-top: 0;    /* Reset margin in dark box */
+    }
+    .why-section ul{
+        padding-left: 20px;
+    }
+    /* class section */
+    .camp{  /*Utilized to emphasize company name */
+        color:#145E6E;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .faq-section{
+        margin-bottom: 40px;
+    }
+    .faq-item{
+        border-bottom: 1px solid #B5CDD8;
+        padding: 15px 0;
+    }
+    .question{
+        font-weight: bold;
+        color: #074A6E;
+        margin-bottom: 5px;
+    }
+    .answer{
+        margin-left: 20px;
+        color: #417692;
+    }
+    .container{
+        display: flex;
+        min-height: 600px;
+    }
+        /* Courses & Workshops Section Styles */
+    .courses, 
+    .workshops {
+        padding: 80px 0;
+    }
+    .courses h2,
+    .workshops h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .course-grid,
+    .workshop-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    .course,
+    .workshop {
+        width: 45%;            /*was 45%*/
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+    .course img {
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .course ul,
+    .workshop ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    .course button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;  /*???*/
+    }
+    .product-grid{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: none;
+    flex-direction: row;
+    columns: 2;
+    }
+    /* id section */
+    #wrapper{
+        width: 90%;
+        margin: auto;
+        padding: 2em;
+        /* shadow the tag and rgba(%,%,%,%) */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        background-color:#EFF8FB;
+    }
+    #webInstHero{
+        background-image: url(assets/images/WebDevInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #dataInstHero{
+        background-image: url(assets/images/DataSciInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #pyInstHero{
+        background-image: url(assets/images/PythonInstructor.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        aspect-ratio: 4 / 3;
+        padding-bottom: 1em;
+    }
+    #mobile{
+        display: inline;     /* visibility on */
+    }
+    #desktop{
+        display: none;     /* visibility off */
+    }
+}
+
+/* Mobile Mode */
+@media(max-width:600px){
+    body{
+        background-color:#074A6E;
+        color:#00070E;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+    }
+    header{
+        background-image: url("assets/images/Banner.JPG");
+        background-size: 100% 100%; /* both hit and wt is 100% */
+        background-position: center;
+        min-height: 180px;
+        font-size: 100%;
+        margin-top: 0px;
+        text-align: left;
+    }
+    header a:link{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:visited{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    header a:hover{
+        text-decoration: none;
+        color: #F5F5F5;
+    }
+    h1{
+        line-height: 100%;
+        padding-top: 25px;
+        padding-left: 2em;
+    }
+    /*
+        display: flex; -> that is applied to the parent element
+            Turn the container into a "Flexbox" which automatically aligns
+            its direct children (or subitems) horizontally in a row
+    */
+    nav{
+        position: static;     /* Hardcode the x,y location */
+        top: 0;
+        left: 0;     /* left side should be at 0 on the page */
+        text-align: center;
+        width: 100%;
+        padding: 0.5em;
+        padding-right: 0;
+        background-color: whitesmoke;
+        margin: 0;
+        z-index: 9999;
+        text-decoration: none;
+    }
+    nav ul{
+            display: flex;
+            flex-wrap: nowrap;       /*nowrap means should be in one line*/
+            justify-content: center;
+            margin: 0;
+            font-size: 0.8em;
+            list-style-type: none;
+        }
+    nav li{
+            width: auto;
+            padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+            display: inline;
+    }
+    nav a{
+        text-decoration: none;
+        transition: all 0.3s;     /* CSS Animations */
+        display: block;
+        text-align: center;
+    }
+    /* This is similar to MIT's button.click */
+    nav a:hover{
+        color:#28BBDC;
+        padding-left: 10px;     /* subtle move */
+    }
+    nav a:link{
+        color: #3F2860;
+    }
+    nav a:visited{
+        color: #497777;
+    }
+    h2{
+        font-size: 100%;
+        color:#145E6E;
+        border-bottom: 2px solid #B5CDD8;
+    }
+    footer{
+        background-color:#074A6E;
+        color:#EFF8FB;
+        text-align: center;
+        font-size: .6em;
+        font-style: italic;
+        padding: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        clear: both;     /* stops any flexing */
+    }
+    footer a:hover{
+        color: #EFF8FB;
+    }
+    section{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    blockquote{
+        margin: 0;
+        padding: 10px;
+        background-color: #EFF8FB;
+        border-left: 4px solid #28BBDC;
+        font-style: italic;
+        min-height: 80px;
+
+    }
+    /* 
+        The .clear class is used to "reset" the layout after you have used floats 
+            (like your .onethird or .onehalf columns).
+        The Issue: When you use float: left;, those elements are essentially "lifted" 
+            out of the normal document flow. If you don't "clear" them, the elements 
+            that follow (like your footer) will try to wrap around the floats or 
+            overlap with them, which usually breaks the layout.
+        Adding <div class="clear"></div> tells the browser: "Stop floating here. Make 
+            sure the next element starts on a brand-new line below everything that was 
+            floated above it.
+    */
+    .clear{
+        clear: both;
+    }
+    /* About Page Sections */
+    .intro-box{
+        background-color: #EFF8FB;
+        border-left: 5px solid #074A6E;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-style: italic
+    }
+    .card{
+        background-color: #EFF8FB;
+        border: 1px solid #B5CDD8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 25px;     /* Added spacing between card */
+    }
+    .why-section{
+        background-color: #04293E;
+        color: #EFF8FB;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+    }
+    .why-section h2{     /*h2 tags in this class */
+        color: #28BBDC;
+        border-bottom-color: #417692;
+        margin-top: 0;    /* Reset margin in dark box */
+    }
+    .why-section ul{
+        padding-left: 20px;
+        columns: 2;     /* All li tags are 2 col in the ul */
+    }
+    /* class section */
+    .camp{  /*Utilized to emphasize company name */
+        color:#145E6E;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .faq-section{
+        margin-bottom: 40px;
+    }
+    .faq-item{
+        border-bottom: 1px solid #B5CDD8;
+        padding: 15px 0;
+    }
+    .question{
+        font-weight: bold;
+        color: #074A6E;
+        margin-bottom: 5px;
+    }
+    .answer{
+        margin-left: 20px;
+        color: #417692;
+    }
+    .container{
+        display: flex;
+        min-height: 600px;
+    }
+    /* Courses & Workshops Section Styles */
+    .courses, 
+    .workshops {
+        padding: 80px 0;
+    }
+    .courses h2,
+    .workshops h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .course-grid,
+    .workshop-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    .course,
+    .workshop {
+        width: 100%;            /*was 45%*/
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+    .course img {
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .course ul,
+    .workshop ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    .course button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;  /*???*/
+    }
+    .product-grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+    /* id section */
+    #wrapper{
+        width: 100%;
+        margin: auto;
+        padding: 2em;
+        /* shadow the tag and rgba(%,%,%,%) */
+        background-color:#EFF8FB;
+    }
+    #mobile{
+        display: inline;     /* visibility on */
+    }
+    #desktop{
+        display: none;     /* visibility off */
+    }
+}
+/* global  property or global var -> if you want this to apply to all tags */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+th, td{
+    border: 1px solid #DDD;
+    padding: 10px;
+    text-align: left;
+}
+th{
+    background-color: #F2F2F2;
+}
+tr:nth-of-type(even){
+    background-color: #DDD;
+}     /* A good one to research... */
+/* Store CSS Code */
+.product-card{
+    width: 33%;
+    margin-bottom: 30px;
+    border: 1px solid #DDD;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.product-card img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.price{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+*{
+    box-sizing: border-box;
+}
